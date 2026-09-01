@@ -104,8 +104,8 @@ export const education = [
   {
     title: "S1 SISTEM INFORMASI",
     institution: "UNIVERSITAS SEMARANG",
-    period: "Sep 2021 - Sekarang",
-    status: "MAHASISWA SEMESTER AKHIR",
+    period: "Sep 2021 - Agu 2026",
+    status: "LULUS (AGUSTUS 2026)",
     detail: "Tugas Akhir: Perbandingan Model Deep Learning LSTM, GRU, dan SimpleRNN Dalam Prediksi Harga Penutupan Bitcoin."
   }
 ];
