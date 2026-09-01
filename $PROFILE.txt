@@ -1,0 +1,4 @@
+function Open-Antigravity {
+    anti-gravity .
+}
+Set-Alias agy. Open-Antigravity

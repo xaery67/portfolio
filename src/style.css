@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Syne:wght@700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #F4F4F0;
+    --text-main: #0D0D0D;
+    --border-main: #000000;
+  }
+
+  body.dark-mode {
+    --bg-main: #0A0A0A;
+    --text-main: #F4F4F0;
+    --border-main: #FFFFFF;
+    background-color: #0A0A0A;
+    color: #F4F4F0;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  /* Extreme Selection */
+  ::selection {
+    background-color: #FFE600;
+    color: #000000;
+  }
+
+  /* Raw Chunky Scrollbar */
+  ::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F4F4F0;
+    border-left: 3px solid #000000;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #000000;
+    border: 3px solid #F4F4F0;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #FFE600;
+  }
+}
+
+@layer components {
+  /* Brutal Button Utility */
+  .btn-brutal {
+    @apply border-3 border-black bg-white px-5 py-3 font-mono font-bold uppercase tracking-wider text-black shadow-brutal transition-all duration-100 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal-lg active:translate-x-1 active:translate-y-1 active:shadow-none;
+  }
+
+  .btn-brutal-yellow {
+    @apply btn-brutal bg-brutal-yellow hover:bg-yellow-300;
+  }
+
+  .btn-brutal-pink {
+    @apply btn-brutal bg-brutal-pink text-white hover:bg-pink-500;
+  }
+
+  .btn-brutal-blue {
+    @apply btn-brutal bg-brutal-blue text-white hover:bg-blue-600;
+  }
+
+  .btn-brutal-cyan {
+    @apply btn-brutal bg-brutal-cyan text-black hover:bg-cyan-300;
+  }
+
+  .btn-brutal-green {
+    @apply btn-brutal bg-brutal-green text-black hover:bg-green-400;
+  }
+
+  /* Brutal Card Box */
+  .card-brutal {
+    @apply border-4 border-black bg-white p-6 shadow-brutal transition-all duration-150 hover:-translate-y-1 hover:shadow-brutal-lg;
+  }
+
+  /* Halftone / Dithering Effect */
+  .halftone-image {
+    filter: grayscale(100%) contrast(160%) brightness(95%);
+    transition: filter 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s ease;
+  }
+  .halftone-image:hover {
+    filter: grayscale(0%) contrast(110%) brightness(105%);
+    transform: scale(1.02);
+  }
+
+  /* Tape Sticker Header */
+  .tape-badge {
+    position: relative;
+    box-shadow: 4px 4px 0px rgba(0,0,0,1);
+    transform: rotate(-2deg);
+  }
+}
+
+/* Custom Cursor Elements */
+#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  background: #FFE600;
+  border: 2px solid #000000;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.15s, height 0.15s, background-color 0.15s;
+  display: none;
+}
+
+@media (pointer: fine) {
+  #custom-cursor {
+    display: block;
+  }
+}
+
+#custom-cursor.cursor-hover {
+  width: 44px;
+  height: 44px;
+  background: #FF2E93;
+  mix-blend-mode: difference;
+  border-radius: 0;
+}
+
+/* Screen Chaos / Glitch Effect */
+.screen-chaos {
+  animation: screen-shake 0.35s steps(2) infinite;
+  filter: invert(1) hue-rotate(180deg) contrast(150%);
+}
+
+@keyframes screen-shake {
+  0% { transform: translate(3px, -3px) rotate(0.5deg); }
+  25% { transform: translate(-3px, 3px) rotate(-0.5deg); }
+  50% { transform: translate(4px, 2px) rotate(0.2deg); }
+  75% { transform: translate(-2px, -4px) rotate(-0.3deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* Diagonal Striped Hazard Patterns */
+.bg-hazard {
+  background: repeating-linear-gradient(
+    -45deg,
+    #FFE600,
+    #FFE600 20px,
+    #000000 20px,
+    #000000 40px
+  );
+}
+
+.bg-hazard-sm {
+  background: repeating-linear-gradient(
+    -45deg,
+    #FFE600,
+    #FFE600 10px,
+    #000000 10px,
+    #000000 20px
+  );
+}
+
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+}
+
+body.dark-mode .bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+}
+
+/* Marquee Smooth Pause on Hover */
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}
