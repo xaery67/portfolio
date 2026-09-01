@@ -2,7 +2,7 @@ import '@phosphor-icons/web/regular';
 import '@phosphor-icons/web/bold';
 import '@phosphor-icons/web/fill';
 import './style.css';
-import { projects, skills, experiences, educationAndCerts } from './data/projects.js';
+import { projects, skills, experiences, education, certificates } from './data/projects.js';
 import confetti from 'canvas-confetti';
 import gsap from 'gsap';
 
@@ -275,9 +275,9 @@ function initCategoryFilters() {
 }
 
 // ==========================================
-// 5. SKILLS, EXPERIENCE & EDUCATION RENDERING
+// 5. SKILLS, EDUCATION, EXPERIENCE & CERTIFICATES
 // ==========================================
-function renderSkillsAndExp() {
+function renderSkillsAndEducation() {
   // Render Skills
   const skillsContainer = document.getElementById('skills-container');
   if (skillsContainer) {
@@ -293,57 +293,123 @@ function renderSkillsAndExp() {
     `).join('');
   }
 
-  // Render Experience Timeline
-  const expContainer = document.getElementById('experience-container');
-  if (expContainer) {
-    expContainer.innerHTML = experiences.map((exp, idx) => `
-      <div class="relative border-4 border-black bg-white p-5 shadow-brutal transition-all hover:translate-x-1">
-        <div class="flex flex-wrap items-center justify-between gap-2 border-b-2 border-black pb-2">
-          <span class="bg-brutal-yellow border border-black px-2 py-0.5 font-mono text-xs font-bold text-black">
-            ${exp.year}
-          </span>
-          <span class="font-mono text-xs font-bold text-zinc-500">
-            EXP_STAGE_0${idx + 1}
-          </span>
-        </div>
-        <h4 class="mt-3 font-sans text-xl font-black uppercase text-black">
-          ${exp.role}
-        </h4>
-        <p class="font-mono text-xs font-bold text-brutal-blue uppercase">
-          @ ${exp.company}
-        </p>
-        <p class="mt-2 font-mono text-sm leading-relaxed text-zinc-700">
-          ${exp.description}
-        </p>
-      </div>
-    `).join('');
-  }
-
-  // Render Education & Certifications
+  // Render Education
   const eduContainer = document.getElementById('education-container');
   if (eduContainer) {
-    eduContainer.innerHTML = educationAndCerts.map((edu, idx) => `
-      <div class="relative border-4 border-black bg-white p-4 shadow-brutal transition-all hover:translate-x-1">
+    eduContainer.innerHTML = education.map(edu => `
+      <div class="relative border-4 border-black bg-white p-5 shadow-brutal-lg transition-all hover:translate-x-1">
         <div class="flex flex-wrap items-center justify-between gap-2 border-b-2 border-black pb-2">
-          <span class="bg-brutal-cyan border border-black px-2 py-0.5 font-mono text-xs font-bold text-black">
+          <span class="bg-brutal-yellow border border-black px-2.5 py-1 font-mono text-xs font-black text-black">
             ${edu.period}
           </span>
-          <span class="font-mono text-xs font-bold text-zinc-500">
-            CERT_0${idx + 1}
+          <span class="border border-black bg-black px-2 py-0.5 font-mono text-[10px] font-bold text-white">
+            ${edu.status}
           </span>
         </div>
-        <h4 class="mt-2 font-sans text-lg font-black uppercase text-black">
+        <h4 class="mt-3 font-sans text-2xl font-black uppercase text-black">
           ${edu.title}
         </h4>
-        <p class="font-mono text-xs font-bold text-brutal-pink uppercase">
+        <p class="font-mono text-xs font-bold text-brutal-blue uppercase">
           ${edu.institution}
         </p>
-        <p class="mt-1 font-mono text-xs leading-relaxed text-zinc-700">
-          ${edu.detail}
-        </p>
+        <div class="mt-3 border-2 border-black bg-zinc-50 p-3 font-mono text-xs font-bold text-zinc-800">
+          <span class="text-brutal-pink font-black">▶ FOKUS RISET:</span> ${edu.detail}
+        </div>
       </div>
     `).join('');
   }
+}
+
+function renderExperiencesSection() {
+  const expContainer = document.getElementById('experience-timeline-grid');
+  if (!expContainer) return;
+
+  expContainer.innerHTML = experiences.map((exp, idx) => `
+    <div class="relative border-4 border-black bg-white p-6 shadow-brutal-lg transition-all duration-150 hover:-translate-y-1 hover:shadow-brutal-xl">
+      <div class="flex flex-wrap items-center justify-between gap-2 border-b-3 border-black pb-3">
+        <span class="bg-brutal-yellow border-2 border-black px-3 py-1 font-mono text-xs font-black text-black shadow-brutal-sm">
+          ${exp.year}
+        </span>
+        <span class="font-mono text-xs font-black text-zinc-500">
+          CAREER_LOG // 0${idx + 1}
+        </span>
+      </div>
+
+      <h4 class="mt-4 font-sans text-2xl font-black uppercase tracking-tight text-black">
+        ${exp.role}
+      </h4>
+      <p class="font-mono text-sm font-bold text-brutal-blue uppercase">
+        @ ${exp.company}
+      </p>
+
+      <p class="mt-3 font-mono text-sm leading-relaxed text-zinc-700">
+        ${exp.description}
+      </p>
+
+      <div class="mt-4 pt-3 border-t-2 border-dashed border-zinc-300 flex flex-wrap gap-1.5">
+        ${exp.tags.map(t => `
+          <span class="border border-black bg-zinc-100 px-2 py-0.5 font-mono text-[10px] font-bold text-black uppercase">
+            #${t}
+          </span>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderCertificatesSection() {
+  const certContainer = document.getElementById('certificates-grid');
+  if (!certContainer) return;
+
+  certContainer.innerHTML = certificates.map((cert, idx) => `
+    <div class="card-brutal relative flex flex-col justify-between border-4 border-black bg-white p-6 shadow-brutal-lg transition-all duration-150 hover:-translate-y-1 hover:shadow-brutal-xl group">
+      <div>
+        <!-- Top Badge -->
+        <div class="flex items-center justify-between border-b-2 border-black pb-3">
+          <span class="border border-black px-2.5 py-0.5 font-mono text-[11px] font-black uppercase ${cert.badgeColor}">
+            ${cert.category}
+          </span>
+          <span class="font-mono text-xs font-bold text-zinc-500">
+            CERT // 0${idx + 1}
+          </span>
+        </div>
+
+        <!-- Title & Issuer -->
+        <h4 class="mt-4 font-sans text-xl font-black uppercase tracking-tight text-black group-hover:text-brutal-pink transition-colors leading-snug">
+          ${cert.title}
+        </h4>
+        <p class="mt-1 font-mono text-xs font-bold text-brutal-blue uppercase">
+          ${cert.issuer}
+        </p>
+
+        <!-- Description -->
+        <p class="mt-3 font-mono text-xs leading-relaxed text-zinc-700">
+          ${cert.description}
+        </p>
+      </div>
+
+      <!-- Credential Footer -->
+      <div class="mt-5 border-t-2 border-dashed border-zinc-300 pt-3">
+        <div class="mb-3 flex flex-wrap items-center justify-between gap-2 font-mono text-[11px] text-zinc-600 font-bold">
+          <span>📅 ${cert.date}</span>
+          <span>⏱ ${cert.duration}</span>
+        </div>
+
+        <div class="flex items-center justify-between gap-2 bg-zinc-100 border-2 border-black p-2 font-mono text-[10px] font-bold">
+          <span class="truncate">ID: ${cert.credentialId}</span>
+          <a 
+            href="${cert.verifyUrl}" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="shrink-0 border border-black bg-brutal-yellow px-2 py-0.5 text-black hover:bg-black hover:text-white transition-colors flex items-center gap-1"
+          >
+            <span>VERIFIKASI</span>
+            <i class="ph-bold ph-arrow-up-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  `).join('');
 }
 
 // ==========================================
@@ -475,7 +541,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initCustomCursor();
   renderProjects();
   initCategoryFilters();
-  renderSkillsAndExp();
+  renderSkillsAndEducation();
+  renderExperiencesSection();
+  renderCertificatesSection();
   initChaosAndTheme();
   initContactForm();
 
