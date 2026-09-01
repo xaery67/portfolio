@@ -2,7 +2,7 @@ import '@phosphor-icons/web/regular';
 import '@phosphor-icons/web/bold';
 import '@phosphor-icons/web/fill';
 import './style.css';
-import { projects, skills, experiences } from './data/projects.js';
+import { projects, skills, experiences, educationAndCerts } from './data/projects.js';
 import confetti from 'canvas-confetti';
 import gsap from 'gsap';
 
@@ -193,7 +193,7 @@ function renderProjects() {
             ${proj.role}
           </span>
           <span class="bg-white px-2 py-1 font-mono text-[10px] font-bold text-black border border-black">
-            ★ PROD_READY
+            ★ VERIFIED_DATA
           </span>
         </div>
       </div>
@@ -213,7 +213,7 @@ function renderProjects() {
 
           <!-- Impact Metric Badge -->
           <div class="mt-3 border-2 border-black bg-zinc-100 p-2 font-mono text-xs font-bold text-black">
-            <span class="text-brutal-pink font-black">▶ METRIC:</span> ${proj.metrics}
+            <span class="text-brutal-pink font-black">▶ DETAIL:</span> ${proj.metrics}
           </div>
         </div>
 
@@ -234,7 +234,7 @@ function renderProjects() {
               rel="noopener noreferrer" 
               class="btn-brutal-yellow flex items-center justify-center gap-1.5 py-2 text-xs font-mono font-bold"
             >
-              <span>LIVE DEMO</span>
+              <span>VIEW REPO</span>
               <i class="ph-bold ph-arrow-up-right text-base"></i>
             </a>
             <a 
@@ -275,7 +275,7 @@ function initCategoryFilters() {
 }
 
 // ==========================================
-// 5. SKILLS & EXPERIENCE RENDERING
+// 5. SKILLS, EXPERIENCE & EDUCATION RENDERING
 // ==========================================
 function renderSkillsAndExp() {
   // Render Skills
@@ -303,7 +303,7 @@ function renderSkillsAndExp() {
             ${exp.year}
           </span>
           <span class="font-mono text-xs font-bold text-zinc-500">
-            STAGE_0${idx + 1}
+            EXP_STAGE_0${idx + 1}
           </span>
         </div>
         <h4 class="mt-3 font-sans text-xl font-black uppercase text-black">
@@ -314,6 +314,32 @@ function renderSkillsAndExp() {
         </p>
         <p class="mt-2 font-mono text-sm leading-relaxed text-zinc-700">
           ${exp.description}
+        </p>
+      </div>
+    `).join('');
+  }
+
+  // Render Education & Certifications
+  const eduContainer = document.getElementById('education-container');
+  if (eduContainer) {
+    eduContainer.innerHTML = educationAndCerts.map((edu, idx) => `
+      <div class="relative border-4 border-black bg-white p-4 shadow-brutal transition-all hover:translate-x-1">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b-2 border-black pb-2">
+          <span class="bg-brutal-cyan border border-black px-2 py-0.5 font-mono text-xs font-bold text-black">
+            ${edu.period}
+          </span>
+          <span class="font-mono text-xs font-bold text-zinc-500">
+            CERT_0${idx + 1}
+          </span>
+        </div>
+        <h4 class="mt-2 font-sans text-lg font-black uppercase text-black">
+          ${edu.title}
+        </h4>
+        <p class="font-mono text-xs font-bold text-brutal-pink uppercase">
+          ${edu.institution}
+        </p>
+        <p class="mt-1 font-mono text-xs leading-relaxed text-zinc-700">
+          ${edu.detail}
         </p>
       </div>
     `).join('');
@@ -453,5 +479,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initChaosAndTheme();
   initContactForm();
 
-  console.log("%c★ BRUTALIST PORTFOLIO INITIALIZED ★", "background: #FFE600; color: #000; font-size: 16px; font-weight: bold; padding: 4px 8px; border: 2px solid black;");
+  console.log("%c★ FERY ADI WIBOWO PORTFOLIO INITIALIZED ★", "background: #FFE600; color: #000; font-size: 16px; font-weight: bold; padding: 4px 8px; border: 2px solid black;");
 });

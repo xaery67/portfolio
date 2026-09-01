@@ -1,98 +1,119 @@
 export const projects = [
   {
     id: "proj-1",
-    title: "NEO_TERMINAL.OS",
-    category: "Web App",
-    year: "2026",
-    role: "Lead Frontend",
-    description: "Sistem operasi web berbasis browser dengan terminal CLI retro, file system lokal, dan antarmuka Neo-Brutalist yang sepenuhnya keyboard-driven.",
-    metrics: "+45K monthly hits / 99.8% raw lighthouse",
-    tags: ["Vanilla JS", "Web Audio API", "Tailwind CSS", "Vite"],
+    title: "BITCOIN_PREDICTOR.AI",
+    category: "AI & Research",
+    year: "2024 - 2025",
+    role: "Deep Learning Researcher",
+    description: "Penelitian dan komparasi model Deep Learning (LSTM, GRU, dan SimpleRNN) dalam menganalisis dan memprediksi fluktuasi harga penutupan Bitcoin berbasis data time-series.",
+    metrics: "Tugas Akhir S1 Sistem Informasi // Multi-Model Evaluation",
+    tags: ["Python", "LSTM / GRU", "SimpleRNN", "Time Series", "TensorFlow"],
     color: "bg-brutal-yellow",
     accentBorder: "border-black",
-    link: "https://github.com",
-    github: "https://github.com",
+    link: "https://github.com/m4chiavelli",
+    github: "https://github.com/m4chiavelli",
     featured: true,
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: "proj-2",
-    title: "HYPER_COMMERCE",
-    category: "Fullstack",
-    year: "2025",
-    role: "UI/UX & Architect",
-    description: "Platform e-commerce avant-garde untuk rilisan streetwear eksklusif dengan checkout berkecepatan tinggi dan dynamic inventory ticker.",
-    metrics: "2.3x Conversion Lift / $120K GMV Processed",
-    tags: ["React", "Tailwind CSS", "GSAP", "Stripe API"],
+    title: "WINNICODE_CLIENT_SUITE",
+    category: "Web App",
+    year: "2024",
+    role: "Web Developer Intern",
+    description: "Pengembangan antarmuka website fungsional dan responsif untuk kebutuhan klien selama program magang di PT. Winnicode Garuda Teknologi.",
+    metrics: "Production-Ready UI // Zero-Error Local Debugging",
+    tags: ["JavaScript", "HTML5", "Tailwind CSS", "PHP", "Responsive UI"],
     color: "bg-brutal-pink",
     accentBorder: "border-black",
-    link: "https://github.com",
-    github: "https://github.com",
+    link: "https://github.com/m4chiavelli",
+    github: "https://github.com/m4chiavelli",
     featured: true,
-    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: "proj-3",
-    title: "GLITCH_CANVAS 3D",
-    category: "Creative Dev",
-    year: "2025",
-    role: "Creative Coder",
-    description: "Eksperimen visual WebGL interaktif untuk manipulasi mesh 3D real-time dengan feedback audio distorsi brutalist.",
-    metrics: "Featured on Awwwards Nominee & FWA of the Day",
-    tags: ["Three.js", "GLSL Shaders", "Web Audio", "Vite"],
+    title: "WEB3_TESTBENCH & DAPPS QA",
+    category: "Web3 & QA",
+    year: "2019 - 2024",
+    role: "Web3 Researcher & Tester",
+    description: "Riset komprehensif terhadap ekosistem blockchain, pengujian fungsionalitas sistem terdesentralisasi (dApps), serta pelaporan feedback bug secara global.",
+    metrics: "5+ Tahun Komunitas Web3 // 100+ dApps Evaluated",
+    tags: ["Web3", "Blockchain", "dApps QA", "Smart Contracts", "Bug Hunting"],
     color: "bg-brutal-green",
     accentBorder: "border-black",
-    link: "https://github.com",
-    github: "https://github.com",
+    link: "https://github.com/m4chiavelli",
+    github: "https://github.com/m4chiavelli",
     featured: false,
-    image: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: "proj-4",
-    title: "RADICAL_DOCS",
-    category: "Tooling",
+    title: "SQL_DATABASE_ARCHITECT",
+    category: "Database",
     year: "2024",
-    role: "Open Source Creator",
-    description: "Static documentation generator dengan tipografi ultra-kontras, fast keyboard navigation, dan zero-config instant search.",
-    metrics: "1.2K GitHub Stars / 300+ Active Repos",
-    tags: ["JavaScript", "PostCSS", "Node.js", "AST Parser"],
+    role: "Database Specialist",
+    description: "Perancangan database relasional terstruktur, pemodelan tabel, dan optimasi kueri SQL kompleks sesuai standar sertifikasi Dicoding Academy.",
+    metrics: "Sertifikasi Dicoding: Belajar Dasar SQL",
+    tags: ["SQL", "Relational DB", "Data Modeling", "Query Optimization"],
     color: "bg-brutal-cyan",
     accentBorder: "border-black",
-    link: "https://github.com",
-    github: "https://github.com",
+    link: "https://github.com/m4chiavelli",
+    github: "https://github.com/m4chiavelli",
     featured: true,
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?q=80&w=800&auto=format&fit=crop"
   }
 ];
 
 export const skills = [
-  { name: "JAVASCRIPT (ES6+)", level: "EXP: 5 YRS", category: "Core", color: "bg-brutal-yellow" },
-  { name: "TAILWIND CSS", level: "PRO MENTALITY", category: "Styling", color: "bg-brutal-cyan" },
-  { name: "REACT / NEXT.JS", level: "HIGH VELOCITY", category: "Framework", color: "bg-brutal-pink" },
-  { name: "GSAP / MOTION", level: "RAW ANIMATIONS", category: "Visuals", color: "bg-brutal-green" },
-  { name: "NODE.JS / API", level: "SOLID ARCH", category: "Backend", color: "bg-brutal-orange" },
-  { name: "GIT & CI/CD", level: "ZERO DOWNTIME", category: "DevOps", color: "bg-white" },
-  { name: "UI/UX WIREFRAMING", level: "RADICAL TASTE", category: "Design", color: "bg-brutal-yellow" },
-  { name: "WEB PERFORMANCE", level: "SUB-100MS", category: "Optimization", color: "bg-brutal-pink" },
+  { name: "WEB DEV (HTML/CSS/JS)", level: "FRONTEND CORE", category: "Core", color: "bg-brutal-yellow" },
+  { name: "DEEP LEARNING (LSTM/GRU)", level: "AI & TIME-SERIES", category: "AI", color: "bg-brutal-pink" },
+  { name: "SQL & DATABASE", level: "DICODING CERTIFIED", category: "Data", color: "bg-brutal-cyan" },
+  { name: "WEB3 & DAPP TESTING", level: "5 YRS RESEARCH", category: "Web3", color: "bg-brutal-green" },
+  { name: "PROJECT MANAGEMENT", level: "DICODING CERTIFIED", category: "Management", color: "bg-brutal-orange" },
+  { name: "SISTEM & JARINGAN", level: "INFRASTRUCTURE", category: "IT", color: "bg-white" },
+  { name: "TROUBLESHOOTING & HW/SW", level: "MAINTENANCE", category: "IT", color: "bg-brutal-yellow" },
+  { name: "CUSTOMER SERVICE & COMM", level: "COLLABORATIVE", category: "Soft Skills", color: "bg-brutal-pink" },
 ];
 
 export const experiences = [
   {
-    year: "2024 - PRESENT",
-    role: "SR. FRONTEND ENGINEER",
-    company: "STUDIO RADIKAL // JAKARTA",
-    description: "Membangun sistem desain monolitik, optimasi Core Web Vitals, dan memimpin pengembangan 10+ antarmuka web berkinerja tinggi."
+    year: "AGU 2024 - DES 2024",
+    role: "MAGANG WEB DEVELOPER",
+    company: "PT. WINNICODE GARUDA TEKNOLOGI",
+    description: "Mengikuti arahan supervisor dalam pembuatan website, menunjukkan tanggung jawab penuh dalam menyelesaikan tugas, serta bekerja mandiri dan disiplin."
   },
   {
     year: "2022 - 2024",
-    role: "CREATIVE DEVELOPER",
-    company: "KINETIC LABS INC.",
-    description: "Bereksperimen dengan animasi interaktif WebGL, micro-interactions kompleks, dan web e-commerce custom."
+    role: "FREELANCER (JUNIOR WEB DEVELOPER)",
+    company: "INDEPENDENT CLIENTS",
+    description: "Menerjemahkan kode menjadi antarmuka web fungsional sesuai permintaan client, serta melakukan debugging dan pengujian kode di lingkungan lokal tanpa error."
   },
   {
-    year: "2020 - 2022",
-    role: "JUNIOR FULLSTACK DEV",
-    company: "CYBERPUNK MEDIA",
-    description: "Mengembangkan REST API, integrasi payment gateway, dan slicing template brutalist responsive."
+    year: "2019 - 2024",
+    role: "WEB3 RESEARCHER & COMMUNITY TESTER",
+    company: "GLOBAL BLOCKCHAIN ECOSYSTEM",
+    description: "Melakukan riset terhadap proyek blockchain untuk menguji fungsionalitas sistem, berpartisipasi aktif dalam komunitas global memberikan umpan balik (feedback) terkait bug atau UX dApps."
+  }
+];
+
+export const educationAndCerts = [
+  {
+    title: "S1 SISTEM INFORMASI",
+    institution: "UNIVERSITAS SEMARANG",
+    period: "Sep 2021 - Sekarang",
+    detail: "Tugas Akhir: Perbandingan Model Deep Learning LSTM, GRU, dan SimpleRNN Dalam Prediksi Harga Penutupan Bitcoin."
+  },
+  {
+    title: "BELAJAR DASAR SQL",
+    institution: "DICODING ACADEMY",
+    period: "Certified",
+    detail: "Penguasaan dasar Structured Query Language, manipulasi data DDL/DML, dan join kueri relasional."
+  },
+  {
+    title: "BELAJAR DASAR MANAJEMEN PROYEK",
+    institution: "DICODING ACADEMY",
+    period: "Certified",
+    detail: "Metodologi manajemen proyek perangkat lunak, lifecycle perencanaan, dan eksekusi kolaboratif."
   }
 ];
